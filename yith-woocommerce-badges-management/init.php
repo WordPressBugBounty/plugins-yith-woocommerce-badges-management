@@ -3,17 +3,17 @@
  * Plugin Name: YITH WooCommerce Badge Management
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-badges-management/
  * Description: Highlight discounts, offers and products features using <strong>custom graphic badges.</strong> <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 3.11.0
+ * Version: 3.12.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-badges-management
  * Domain Path: /languages/
- * WC requires at least: 9.0
- * WC tested up to: 9.2
+ * WC requires at least: 9.3
+ * WC tested up to: 9.5
  *
  * @package YITH\BadgeManagement
  * @author  YITH <plugins@yithemes.com>
- * @version 3.11.0
+ * @version 3.12.0
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -50,7 +50,7 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
-! defined( 'YITH_WCBM_VERSION' ) && define( 'YITH_WCBM_VERSION', '3.11.0' );
+! defined( 'YITH_WCBM_VERSION' ) && define( 'YITH_WCBM_VERSION', '3.12.0' );
 
 ! defined( 'YITH_WCBM_FREE_INIT' ) && define( 'YITH_WCBM_FREE_INIT', plugin_basename( __FILE__ ) );
 
@@ -91,7 +91,7 @@ if ( ! function_exists( 'yith_wcbm_init' ) ) {
 	 * Init function.
 	 */
 	function yith_wcbm_init() {
-		load_plugin_textdomain( 'yith-woocommerce-badges-management', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		yith_plugin_fw_load_plugin_textdomain( 'yith-woocommerce-badges-management', dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		require_once 'includes/functions.yith-wcbm.php';
 		require_once 'includes/functions.yith-wcbm-deprecated.php';
@@ -134,8 +134,7 @@ if ( ! function_exists( 'yith_wcbm_install' ) ) {
 
 add_action( 'plugins_loaded', 'yith_wcbm_install', 11 );
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( plugin_dir_path( __FILE__ ) );

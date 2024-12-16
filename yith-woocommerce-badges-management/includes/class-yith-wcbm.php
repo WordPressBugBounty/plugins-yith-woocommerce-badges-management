@@ -51,7 +51,6 @@ if ( ! class_exists( 'YITH_WCBM' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'current_screen', array( $this, 'maybe_load_frontend' ) );
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
 			add_action( 'plugins_loaded', array( $this, 'load_cpt_admin_class' ), 20 );
 
 			// Declare WooCommerce supported features.
@@ -83,19 +82,6 @@ if ( ! class_exists( 'YITH_WCBM' ) ) {
 				if ( $screen && $screen->is_block_editor() ) {
 					$this->frontend = yith_wcbm_frontend();
 					$this->frontend->enqueue_scripts();
-				}
-			}
-		}
-
-		/**
-		 * Load Plugin Framework
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
 				}
 			}
 		}
