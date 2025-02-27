@@ -91,6 +91,11 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 3.13.0 – Released on 31 January 2025 =
+
+* New: support for WooCommerce 9.6
+* Update: YITH plugin framework
+
 = 3.12.0 – Released on 16 December 2024 =
 
 * New: support for WordPress 6.7
