@@ -3,18 +3,18 @@
  * Plugin Name: YITH WooCommerce Badge Management
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-badges-management/
  * Description: Highlight discounts, offers and products features using <strong>custom graphic badges.</strong> <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 3.18.0
+ * Version: 3.19.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-badges-management
  * Domain Path: /languages/
- * WC requires at least: 9.9
- * WC tested up to: 10.1
+ * WC requires at least: 10.0
+ * WC tested up to: 10.2
  * Requires Plugins: woocommerce
  *
  * @package YITH\BadgeManagement
  * @author  YITH <plugins@yithemes.com>
- * @version 3.18.0
+ * @version 3.19.0
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -51,7 +51,7 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
-! defined( 'YITH_WCBM_VERSION' ) && define( 'YITH_WCBM_VERSION', '3.18.0' );
+! defined( 'YITH_WCBM_VERSION' ) && define( 'YITH_WCBM_VERSION', '3.19.0' );
 
 ! defined( 'YITH_WCBM_FREE_INIT' ) && define( 'YITH_WCBM_FREE_INIT', plugin_basename( __FILE__ ) );
 
