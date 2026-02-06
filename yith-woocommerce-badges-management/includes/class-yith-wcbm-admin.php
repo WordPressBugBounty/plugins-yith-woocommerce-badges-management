@@ -192,7 +192,7 @@ if ( ! class_exists( 'YITH_WCBM_Admin' ) ) {
 			wp_register_style( 'yith_wcbm_admin_style', YITH_WCBM_ASSETS_URL . 'css/admin.css', array(), YITH_WCBM_VERSION );
 			wp_register_style( 'yith_wcbm_admin_icons', YITH_WCBM_ASSETS_URL . 'css/icons.css', array(), YITH_WCBM_VERSION );
 			wp_register_script( 'yith_wcbm_admin', YITH_WCBM_ASSETS_URL . 'js/admin.js', array( 'jquery' ), YITH_WCBM_VERSION, true );
-			wp_register_script( 'yith_wcbm_metabox_options', YITH_WCBM_ASSETS_URL . 'js/' . $metabox_js, array( 'jquery', 'jquery-blockui', 'selectWoo', 'wp-util' ), YITH_WCBM_VERSION, true );
+			wp_register_script( 'yith_wcbm_metabox_options', YITH_WCBM_ASSETS_URL . 'js/' . $metabox_js, array( 'jquery', \YIT_Assets::wc_script_handle('jquery-blockui'), 'selectWoo', 'wp-util' ), YITH_WCBM_VERSION, true );
 
 			if ( in_array( $screen_id, array( 'yith-wcbm-badge', 'edit-yith-wcbm-badge', 'product', 'yith-plugins_page_yith_wcbm_panel' ), true ) ) {
 				wp_enqueue_style( 'yith_wcbm_admin_style' );
