@@ -4,8 +4,8 @@ Contributors: yithemes
 Tags: badges, badge, woocommerce, products, yith
 Requires at least: 6.8
 Tested up to: 7.0
-Stable tag: 3.26.0
-Requires PHP: 7.4
+Stable tag: 3.27.0
+Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 8. Admin: General settings
 
 == Changelog ==
+
+= 3.27.0 – Released on 30 July 2026 =
+
+* New: support for WooCommerce 11.0
 
 = 3.26.0 – Released on 22 June 2026 =
 
